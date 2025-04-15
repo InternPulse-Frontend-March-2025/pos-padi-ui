@@ -11,14 +11,17 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  InputLeftElement,
   Link,
   Stack,
   Text,
   VStack,
   HStack,
   useColorModeValue,
+  Progress,
 } from "@chakra-ui/react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { FaUser, FaPhone, FaEnvelope, FaLock } from "react-icons/fa";
 import podImage from "../../src/assets/POD.png";
 
 const HomePage = () => {
@@ -39,7 +42,8 @@ const HomePage = () => {
           position="relative"
           overflow="hidden"
           bg="gray.800"
-          color="white">
+          color="white"
+          borderRadius={{ base: "0", md: "0 0 0 20px" }}>
           <Image
             src={podImage}
             alt="POS Terminal"
@@ -48,6 +52,7 @@ const HomePage = () => {
             h="100%"
             position="absolute"
             opacity="0.8"
+            borderRadius={{ base: "0", md: "0 0 0 20px" }}
           />
           <Box
             position="relative"
@@ -90,7 +95,8 @@ const HomePage = () => {
           bg="white"
           display="flex"
           alignItems="center"
-          pt={{ base: 12, md: 24 }}>
+          pt={{ base: 12, md: 24 }}
+          borderRadius={{ base: "0", md: "0 20px 20px 0" }}>
           <Box
             w="100%"
             maxW="md"
@@ -99,6 +105,13 @@ const HomePage = () => {
             pt={{ base: 12, md: 24 }}>
             <Box mb={8}>
               <Box mb={6}>
+                <Progress 
+                  value={25} 
+                  size="sm" 
+                  colorScheme="green" 
+                  borderRadius="full" 
+                  mb={4}
+                />
                 <HStack mb={2}>
                   <Box
                     w={1}
@@ -115,33 +128,58 @@ const HomePage = () => {
                 align="flex-start">
                 <FormControl isRequired>
                   <FormLabel>First Name</FormLabel>
-                  <Input placeholder="Enter First Name" />
+                  <InputGroup>
+                    <InputLeftElement pointerEvents="none">
+                      <FaUser color="gray.300" opacity={0.7} />
+                    </InputLeftElement>
+                    <Input placeholder="Enter First Name" pl={10} />
+                  </InputGroup>
                 </FormControl>
 
                 <FormControl isRequired>
                   <FormLabel>Last Name</FormLabel>
-                  <Input placeholder="Enter Last Name" />
+                  <InputGroup>
+                    <InputLeftElement pointerEvents="none">
+                      <FaUser color="gray.300" opacity={0.7} />
+                    </InputLeftElement>
+                    <Input placeholder="Enter Last Name" pl={10} />
+                  </InputGroup>
                 </FormControl>
 
                 <FormControl isRequired>
                   <FormLabel>Phone No</FormLabel>
-                  <Input placeholder="Enter Phone Number" />
+                  <InputGroup>
+                    <InputLeftElement pointerEvents="none">
+                      <FaPhone color="gray.300" opacity={0.7} />
+                    </InputLeftElement>
+                    <Input placeholder="Enter Phone Number" pl={10} />
+                  </InputGroup>
                 </FormControl>
 
                 <FormControl isRequired>
                   <FormLabel>Email</FormLabel>
-                  <Input
-                    placeholder="Enter Email"
-                    type="email"
-                  />
+                  <InputGroup>
+                    <InputLeftElement pointerEvents="none">
+                      <FaEnvelope color="gray.300" opacity={0.7} />
+                    </InputLeftElement>
+                    <Input
+                      placeholder="Enter Email"
+                      type="email"
+                      pl={10}
+                    />
+                  </InputGroup>
                 </FormControl>
 
                 <FormControl isRequired>
                   <FormLabel>Password</FormLabel>
                   <InputGroup>
+                    <InputLeftElement pointerEvents="none">
+                      <FaLock color="gray.300" opacity={0.7} />
+                    </InputLeftElement>
                     <Input
                       type={showPassword ? "text" : "password"}
                       placeholder="Enter Password"
+                      pl={10}
                     />
                     <InputRightElement width="4.5rem">
                       <Button
@@ -152,14 +190,50 @@ const HomePage = () => {
                       </Button>
                     </InputRightElement>
                   </InputGroup>
+                  <HStack mt={2} spacing={2}>
+                    <Text
+                      fontSize="xs"
+                      color="green.500"
+                      bg="white"
+                      border="1px solid"
+                      borderColor="green.500"
+                      p={1}
+                      borderRadius="md">
+                      Min 8 Characters
+                    </Text>
+                    <Text
+                      fontSize="xs"
+                      color="green.500"
+                      bg="white"
+                      border="1px solid"
+                      borderColor="green.500"
+                      p={1}
+                      borderRadius="md">
+                      1 Number
+                    </Text>
+                    <Text
+                      fontSize="xs"
+                      color="green.500"
+                      bg="white"
+                      border="1px solid"
+                      borderColor="green.500"
+                      p={1}
+                      borderRadius="md">
+                      Special Character
+                    </Text>
+                  </HStack>
                 </FormControl>
 
                 <FormControl isRequired>
                   <FormLabel>Confirm Password</FormLabel>
                   <InputGroup>
+                    <InputLeftElement pointerEvents="none">
+                      <FaLock color="gray.300" opacity={0.7} />
+                    </InputLeftElement>
                     <Input
                       type={showConfirmPassword ? "text" : "password"}
                       placeholder="Confirm Password"
+                      pl={10}
                     />
                     <InputRightElement width="4.5rem">
                       <Button
