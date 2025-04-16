@@ -85,22 +85,24 @@ const ForgotPassword = () => {
       case 2:
         return (
             <>
-                <HStack spacing={2} alignItems="center">
+                <HStack spacing={2} alignItems="center" mb={6} justify="flex-end">
                     <CheckCircleIcon color="green.500" />
                     <Text color="green.500">Verification code has been sent to your email</Text>
                 </HStack>
             
-                <VStack spacing={6} bg="white" p={6} borderRadius="2xl" boxShadow="md">
+                <VStack spacing={6} align="stretch"> 
                     <Heading size="md" textAlign="center">
                     OTP Verification
                     </Heading>
                     <Text fontSize="sm" color="gray.600" textAlign="center">
                     Input the code that was sent to your mail inbox
                     </Text>
-                    <Circle size="60px" bg="green.100">
-                    <Icon as={EmailIcon} boxSize={8} color="green.500" />
-                    </Circle>
-                    <HStack spacing={2}>
+                    <Box display="flex" justifyContent="center">
+                        <Circle size="60px" bg="green.100" display="flex" alignItems="center" justifyContent="center">
+                            <Icon as={EmailIcon} boxSize={8} color="green.500" />
+                        </Circle>
+                    </Box>
+                    <HStack spacing={2} justify="center" align="center">
                     {otp.map((digit, index) => (
                         <Input
                         key={index}
@@ -134,7 +136,7 @@ const ForgotPassword = () => {
                     >
                     Verify
                     </Button>
-                    <Text fontSize="md" fontWeight="medium">
+                    <Text fontSize="md" fontWeight="medium" textAlign="center"> 
                     0 : {timer.toString().padStart(2, '0')}
                     </Text>
                 </VStack>
@@ -201,6 +203,8 @@ const ForgotPassword = () => {
         borderWidth={1}
         borderRadius="lg"
         boxShadow="lg"
+        justifyContent="top"
+        h="80vh"
       >
         {renderStep()}
       </Box>

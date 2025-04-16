@@ -5,6 +5,7 @@ import Dashboard from "./pages/Dashboard";
 import Layout from "./pages/Layout";
 import Emailtemplate  from "./pages/Emailtemplate";
 import OTPVerificationPage from "./pages/OTPVerificationPage";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route path='settings' element={<Settings />} />
           <Route path='Emailtemplate' element={<Emailtemplate />} />
           <Route path='OTPVerificationpage' element={<OTPVerificationPage />} />
+          <Route path='forgotpassword' element={<ForgotPassword />} />
         </Route>
       </Routes>
     </BrowserRouter>
