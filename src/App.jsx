@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import Settings from "./pages/Settings";
 import Dashboard from "./pages/Dashboard";
 import Layout from "./pages/Layout";
+import Verify from "./pages/Verify";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path='dashboard' element={<Dashboard />} />
           <Route path='settings' element={<Settings />} />
+          <Route path='verify' element={<Verify />} />
         </Route>
       </Routes>
     </BrowserRouter>
