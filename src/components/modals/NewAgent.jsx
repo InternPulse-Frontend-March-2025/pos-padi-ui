@@ -214,7 +214,7 @@ const NewAgent = () => {
   const Heading = ({ children }) => (
     <h1 style={{ 
       fontSize: '1.5rem', 
-      fontWeight: '600', 
+      fontWeight: '700', 
       marginBottom: '0.5rem',
       color: '#1A202C'
     }}>
