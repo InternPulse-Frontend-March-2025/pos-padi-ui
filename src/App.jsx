@@ -3,8 +3,8 @@ import HomePage from "./pages/HomePage";
 import Settings from "./pages/Settings";
 import Dashboard from "./pages/Dashboard";
 import Layout from "./pages/Layout";
-import Emailtemplate  from "./pages/Emailtemplate";
 import OTPVerificationPage from "./pages/OTPVerificationPage";
+import AgentOnboardingPage from "./pages/AgentOnboardingPage";
 
 function App() {
 
@@ -15,8 +15,8 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path='dashboard' element={<Dashboard />} />
           <Route path='settings' element={<Settings />} />
-          <Route path='Emailtemplate' element={<Emailtemplate />} />
           <Route path='OTPVerificationpage' element={<OTPVerificationPage />} />
+          <Route path='AgentOnboardingpage' element={<AgentOnboardingPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
